@@ -8,9 +8,17 @@ class ProductRegister:
         self.__prod_id = 0
         self.__products = []
 
+    @property
+    def prod_id(self):
+        return self.__prod_id
+
+    @property
+    def products(self):
+        return self.__products
+
     # TODO: testes de entrada
     def register(self):
-        id = self.__id
+        id = int(input("Type the product's ID: "))
         name = input("Type the product's name: ").title()
         price = float(input("Type the price of the product: "))
         stock_quantity = int(input("Type the stock quantity of the product: "))
@@ -35,9 +43,17 @@ class CustomerRegister:
         self.__cust_id = 0
         self.__customers = []
 
+    @property
+    def cust_id(self):
+        return self.__cust_id
+
+    @property
+    def customers(self):
+        return self.__customers
+
     # TODO: testes de entrada
     def register(self):
-        id = self.__cust_id
+        id = int(input("Type the customer's ID: "))
         name = input("Type the customer's name: ").title()
         age = int(input("Type the age of the customer: "))
         address = input("Type the address of the customer: ")
@@ -62,9 +78,17 @@ class EmployeeRegister:
         self.__emp_id = 0
         self.__employees = []
 
+    @property
+    def employees(self):
+        return self.__employees
+
+    @property
+    def emp_id(self):
+        return self.__emp_id
+
     # TODO: testes de entrada
     def register(self):
-        id = self.__emp_id
+        id = int(input("Type the employee's ID: "))
         name = input("Type the employe's name: ").title()
         age = int(input("Type the age of the employee: "))
         address = input("Type the address of the employee: ")
@@ -90,16 +114,20 @@ class SalesRegister:
     def __init__(self):
         self.__sale_id = 0
         self.__sales = []
+        #self.__reg_prod = reg_prod
+        #self.__reg_cust = reg_cust
+        #self.__reg_emp = reg_emp
 
     # TODO: testes de entrada
     def register(self):
-        id = self.__sale_id
+        id = int(input("Type the sale id: "))
         prod_id = int(input("Type the product id: "))
         cust_id = int(input("Type the customer id: "))
         quantity = int(input("Type the quantity: "))
         final_price = float(input("Type the final price: "))
         sale = Sale(id, prod_id, cust_id, quantity, final_price)
         self.add(sale)
+
 
     def add(self, sale):
         self.__sales.append(sale)

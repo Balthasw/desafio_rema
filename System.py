@@ -24,7 +24,7 @@ class System:
         self.welcome()
         self.show_menu()
         while True:
-            command = input()
+            command = input("Command (0 to exit): ")
 
             if command == '1':
                 self.__product_register.register()
@@ -62,7 +62,7 @@ class System:
                 break
 
             else:
-                print("Type a valid number, please. 0 to exit.")
+                print("Type a valid number, please")
                 continue
 
         print("End")
